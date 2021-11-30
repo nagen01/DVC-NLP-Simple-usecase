@@ -19,7 +19,7 @@ jobs:
           cml-runner \
           --cloud aws \
           --cloud-region us-west \
-          --cloud-type=m \
+          --cloud-type=t2.micro \
           --labels=cml-runner 
   model-training:
     needs: deploy-runner
@@ -39,4 +39,3 @@ jobs:
           echo "## metrics" >> report.md
           cat scores.json >> report.md
           cml-send-comment report.md ## >> CML COMMAND USE TO COMMENT ON LAST COMMIT
-          
